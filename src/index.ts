@@ -1,4 +1,4 @@
-import { regex } from './regexManual'
+import { regex } from './regex'
 
 export const slugger = function slugger(stringToSlug: string, maintainCase?: boolean) {
   if (typeof stringToSlug !== 'string') return ''
