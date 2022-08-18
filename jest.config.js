@@ -1,19 +1,9 @@
-module.exports = {
+const config = {
+  preset: 'ts-jest',
   testEnvironment: 'node',
-  clearMocks: true,
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.json',
-      diagnostic: true,
-    },
-  },
-  moduleFileExtensions: ['ts', 'tsx', 'js'],
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
-  },
-  testMatch: ['**/*.test.(js|ts)'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '@setup/(.*)': '<rootDir>/tests/setup/$1',
   },
   coverageThreshold: {
     global: {
@@ -23,7 +13,10 @@ module.exports = {
       statements: 95,
     },
   },
+  clearMocks: true,
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{js,ts}'],
+  collectCoverageFrom: ['<rootDir>/src/*'],
   coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/tests/'],
 }
+
+module.exports = config

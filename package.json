@@ -10,7 +10,7 @@
     "lint": "eslint ./ --ext .ts",
     "test": "jest",
     "type-check": "tsc --noEmit",
-    "build": "microbundle --compress --target node",
+    "build": "microbundle --compress --target node --tsconfig tsconfig.build.json",
     "release": "standard-version",
     "publish-release": "git push --follow-tags origin master && yarn publish",
     "deploy": "sh scripts/publish.sh"
@@ -29,7 +29,7 @@
   "author": "u/christopher-caldwell",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^28.1.7",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",

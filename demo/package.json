@@ -1,0 +1,41 @@
+{
+  "name": "@caldwell619/github-slugger-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "format": "node ../node_modules/prettier/bin-prettier.js --write src",
+    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
+    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build"
+  },
+  "homepage": "https://christopher-caldwell.github.io/mui-inline-suggest",
+  "dependencies": {
+    "@caldwell619/github-slugger": "link:..",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.10.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "use-mui": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "link:../node_modules/@types/node",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "prettier": "link:../node_modules/prettier",
+    "react-scripts": "^5.0.1",
+    "typescript": "link:../node_modules/typescript"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
