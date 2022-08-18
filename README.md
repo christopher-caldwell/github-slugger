@@ -1,4 +1,4 @@
-# MUI Form Generator
+# GitHub Slugger
 
 Fork of github-slugger written in TS
 
