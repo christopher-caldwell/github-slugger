@@ -1,6 +1,6 @@
 {
   "name": "@caldwell619/github-slugger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fork of github-slugger written in TS",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
