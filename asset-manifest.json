@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/github-slugger/static/js/main.c5bc7c2e.js",
+    "index.html": "/github-slugger/index.html",
+    "main.c5bc7c2e.js.map": "/github-slugger/static/js/main.c5bc7c2e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c5bc7c2e.js"
+  ]
+}
