@@ -4,18 +4,20 @@
   "private": true,
   "scripts": {
     "format": "node ../node_modules/prettier/bin-prettier.js --write src",
-    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "homepage": "https://christopher-caldwell.github.io/mui-inline-suggest",
   "dependencies": {
     "@caldwell619/github-slugger": "link:..",
+    "@caldwell619/mui-form-generator": "^0.0.4",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.34.2",
     "use-mui": "^1.0.6"
   },
   "devDependencies": {

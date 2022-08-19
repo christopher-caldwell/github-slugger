@@ -1,39 +1,52 @@
 import { useState } from 'react'
-import { Typography, Grid } from '@mui/material'
-import { InlineSuggest } from '@caldwell619/mui-inline-suggest'
+import { Divider, Typography, Grid } from '@mui/material'
+import { MuiFormProvider } from '@caldwell619/mui-form-generator'
 
-import { Suggestions } from './features'
+import { TicketForm, ticketFormDefaultValues } from './features/ticket-form'
+import { SlugForm, slugFormDefaultValues } from './features/slug-form'
+import { Result } from './features/result'
 
 const App = () => {
-  const [suggestions, setSuggestions] = useState<string[]>(['Angular', 'jQuery', 'Polymer', 'React', 'Vue.js'])
-
+  const [slugResult, setSlugResult] = useState<string | undefined>()
+  const [ticketResult, setTicketResult] = useState<string | undefined>()
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={1} sx={{ padding: '0 10%' }}>
       <Grid item xs={12}>
-        <Typography variant='h4'>@caldwell619/mui-inline-suggest</Typography>
+        <Typography variant='h4'>@caldwell619/github-slugger</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant='subtitle1'>
-          Material UI TextField component that will suggest the rest of the input, like an IDE or terminal
-        </Typography>
+        <Typography variant='subtitle1'>Fork of github-slugger written in TS</Typography>
       </Grid>
-      <Grid item container xs={12} sx={{ marginTop: '10vh', margin: '0 auto' }} spacing={3}>
-        <Grid item xs={12} container>
-          <Grid item xs={6}>
-            <Suggestions suggestions={suggestions} setSuggestions={setSuggestions} />
-          </Grid>
+      <Grid item container xs={12} sx={{ marginTop: '5vh' }} spacing={3}>
+        <MuiFormProvider props={{ defaultValues: slugFormDefaultValues }}>
+          <>
+            <Grid item xs={12}>
+              <Typography variant='h4'>Slug meh</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <SlugForm setResult={setSlugResult} />
+            </Grid>
+            <Grid item xs={12}>
+              <Result result={slugResult} />
+            </Grid>
+          </>
+        </MuiFormProvider>
+        <Grid item xs={12}>
+          <Divider />
         </Grid>
-        <Grid item xs={12} sx={{ marginTop: '10vh' }} container>
-          <Grid item xs={6}>
-            <Typography variant='h5' sx={{ marginBottom: '3vh' }}>
-              Result
-            </Typography>
-            <InlineSuggest
-              textFieldProps={{ fullWidth: true, placeholder: 'Type to see suggestions', variant: 'outlined' }}
-              suggestions={suggestions}
-            />
-          </Grid>
-        </Grid>
+        <MuiFormProvider props={{ defaultValues: ticketFormDefaultValues }}>
+          <>
+            <Grid item xs={12}>
+              <Typography variant='h4'>Make a git command based on ticket</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <TicketForm setResult={setTicketResult} />
+            </Grid>
+            <Grid item xs={12}>
+              <Result result={ticketResult} />
+            </Grid>
+          </>
+        </MuiFormProvider>
       </Grid>
     </Grid>
   )

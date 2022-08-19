@@ -13,7 +13,9 @@
     "build": "microbundle --compress --target node --tsconfig tsconfig.build.json",
     "release": "standard-version",
     "publish-release": "git push --follow-tags origin master && yarn publish",
-    "deploy": "sh scripts/publish.sh"
+    "publish:release": "sh publish.sh",
+    "predeploy": "cd demo && yarn install && yarn run build",
+    "deploy": "gh-pages -d demo/dist"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "gh-pages": "^4.0.0",
     "jest": "26.6.3",
     "microbundle": "^0.13.3",
     "prettier": "^2.0.5",
